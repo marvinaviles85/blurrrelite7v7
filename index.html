@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blurrr Predators | 7v7 Football</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Teko:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav>
         <div class="logo-container">
-            <img src="fox-creek-logo.png" alt="Blurrr Predators Logo" class="nav-logo">
-            <span>BLURRR PREDATORS</span>
+            <img src="Images/blurrr_logo.png" alt="Blurrr Predators Logo" class="nav-logo">
+            <span class="team-name">BLURRR PREDATORS</span>
         </div>
-        <ul>
+        <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#schedule">Schedule</a></li>
             <li><a href="#roster">Roster</a></li>
@@ -23,30 +23,38 @@
 
     <header id="home" class="hero">
         <div class="hero-content">
-            <h1>SPEED KILLS.</h1>
-            <p>Home of the Blurrr Predators 7v7</p>
-            <a href="#schedule" class="btn">View Schedule</a>
+            <h1 class="main-title">SPEED KILLS</h1>
+            <p class="sub-title">FOX CREEK 7v7 FOOTBALL</p>
+            <div class="hero-btns">
+                <a href="#schedule" class="btn primary">Schedule</a>
+                <a href="#roster" class="btn secondary">Roster</a>
+            </div>
         </div>
     </header>
 
-    <section id="schedule" class="container">
-        <h2>Upcoming Games</h2>
-        <table id="game-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Opponent</th>
-                    <th>Time</th>
-                    <th>Result</th>
-                </tr>
-            </thead>
-            <tbody id="schedule-body">
-                </tbody>
-        </table>
+    <section id="schedule" class="section-container">
+        <h2 class="section-header">2024 TOURNAMENT SCHEDULE</h2>
+        <div class="table-wrapper">
+            <table id="game-table">
+                <thead>
+                    <tr>
+                        <th>DATE</th>
+                        <th>OPPONENT</th>
+                        <th>TIME</th>
+                        <th>RESULT</th>
+                    </tr>
+                </thead>
+                <tbody id="schedule-body">
+                    </tbody>
+            </table>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Blurrr Predators | Fox Creek Football</p>
+        <div class="footer-content">
+            <img src="Images/blurrr_logo.png" alt="Logo" class="footer-logo">
+            <p>&copy; 2024 Blurrr Predators | Fox Creek High School</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
