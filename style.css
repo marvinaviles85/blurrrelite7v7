@@ -1,0 +1,65 @@
+:root {
+    --primary-red: #D32F2F;
+    --black: #121212;
+    --white: #FFFFFF;
+    --gray: #f4f4f4;
+}
+
+body {
+    font-family: 'Arial Black', sans-serif;
+    margin: 0;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: var(--black);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav ul li a { color: white; text-decoration: none; font-weight: bold; }
+
+/* Hero Section */
+.hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('football-field.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero h1 { font-size: 5rem; color: var(--primary-red); margin-bottom: 0; }
+
+.btn {
+    background: var(--primary-red);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+/* Tables */
+.container { padding: 50px 10%; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: var(--black); color: white; padding: 15px; }
+td { padding: 15px; border-bottom: 1px solid #ddd; text-align: center; }
+tr:nth-child(even) { background: var(--gray); }
