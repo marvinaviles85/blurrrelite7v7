@@ -42,18 +42,15 @@ const tournamentData = [
 function loadTournamentSchedule() {
     const tableBody = document.getElementById('schedule-body');
 
-    // Only run if the table body exists (prevents errors on index.html)
     if (tableBody) {
         console.log("Schedule element found. Injecting data...");
         
-        // Map through data and create HTML rows
         const rows = tournamentData.map(item => {
             return `
                 <tr>
                     <td>${item.date}</td>
                     <td style="font-weight: bold; color: #D32F2F;">${item.name.toUpperCase()}</td>
                     <td>${item.location.toUpperCase()}</td>
-                    <td style="font-weight: bold;">${item.result}</td>
                 </tr>
             `;
         }).join('');
