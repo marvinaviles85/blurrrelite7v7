@@ -102,14 +102,69 @@ nav {
 }
 
 /* --- HERO SECTION --- */
+/* --- HERO SECTION WITH CAROUSEL --- */
 .hero {
+    position: relative;
     height: 70vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('Images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden; /* Keeps slides contained */
+}
+
+/* Background Slideshow Container */
+.hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Individual Slides */
+.hero-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: heroFade 15s infinite; /* 15s total for 3 images */
+    
+    /* THE MUTED EFFECT: Dark overlay + Lower brightness/saturation */
+    filter: brightness(0.4) grayscale(30%); 
+}
+
+/* Overlay to ensure text is readable */
+.hero-slideshow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    z-index: 2;
+}
+
+/* Stagger the animation for each slide */
+.hero-slide:nth-child(2) { animation-delay: 5s; }
+.hero-slide:nth-child(3) { animation-delay: 10s; }
+
+/* The Fade Animation */
+@keyframes heroFade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }  /* Fade in */
+    33% { opacity: 1; }  /* Stay visible */
+    43% { opacity: 0; }  /* Fade out */
+    100% { opacity: 0; }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3; /* Keeps text above the slides */
     text-align: center;
     color: var(--white);
 }
