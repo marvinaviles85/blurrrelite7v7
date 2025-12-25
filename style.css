@@ -305,8 +305,83 @@ footer {
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
+/* --- UPDATED MOBILE NAVIGATION LOGIC --- */
+
+/* Hide the checkbox itself */
+.menu-toggle {
+    display: none;
+}
+
+/* The Hamburger Icon (the 3 bars) */
+.hamburger {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: var(--white);
+    transition: 0.3s;
+}
+
+/* --- MOBILE STYLES (Phones) --- */
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Consider a mobile burger menu later */
-    .main-title { font-size: 3rem; }
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
+        z-index: 1001;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Drops down right below nav bar */
+        left: 0;
+        width: 100%;
+        background: var(--glass-nav);
+        border-bottom: 3px solid var(--primary-red);
+        max-height: 0; /* Starts hidden */
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        padding: 0;
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 20px;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        border-bottom: none; /* Clean up active underline for mobile */
+    }
+
+    /* WHEN CHECKBOX IS CHECKED, SHOW MENU */
+    .menu-toggle:checked ~ .nav-links {
+        max-height: 500px; /* Expands the menu */
+    }
+
+    /* ANIMATE HAMBURGER TO 'X' WHEN OPEN */
+    .menu-toggle:checked + .hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle:checked + .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle:checked + .hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Adjust Hero/Text for mobile */
+    .main-title { font-size: 2.5rem; }
+    .sub-title { font-size: 1rem; letter-spacing: 4px; }
     .section-header { font-size: 1.8rem; }
 }
