@@ -84,7 +84,7 @@ nav {
 .nav-contact-btn {
     background-color: var(--primary-red);
     color: white !important;
-    padding: 8px 18px;
+    padding: 6px 15px;
     border-radius: 4px;
     font-weight: bold;
     border: 1px solid transparent;
@@ -111,8 +111,7 @@ nav {
 
 .main-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(3rem, 10vw, 6rem); /* Responsive font sizing */
-    margin-bottom: 0;
+    font-size: clamp(3rem, 10vw, 6rem);
     text-shadow: 2px 2px 15px rgba(0,0,0,0.7);
 }
 
@@ -123,26 +122,29 @@ nav {
     margin-top: -10px;
 }
 
-/* --- TOURNAMENT SCHEDULE TABLE --- */
+/* --- SCHEDULE PAGE ADJUSTMENTS --- */
 .section-container {
-    padding: 60px 5%;
-    min-height: 80vh;
+    padding: 40px 5%; /* Reduced top padding to fix large gap */
+    min-height: 60vh; /* Keeps footer pushed down without massive empty space */
     text-align: center;
 }
 
 .section-header {
     font-family: 'Orbitron', sans-serif;
     font-size: 2.5rem;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 30px; /* Space between title and table */
     border-bottom: 4px solid var(--primary-red);
     display: inline-block;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 .table-wrapper {
     overflow-x: auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     border-radius: 8px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the table container */
 }
 
 table {
@@ -154,15 +156,15 @@ table {
 th {
     background: var(--black);
     color: var(--white);
-    padding: 20px;
-    font-size: 1.3rem;
-    letter-spacing: 1px;
+    padding: 15px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 }
 
 td {
-    padding: 18px;
-    border-bottom: 1px solid #ddd;
-    font-size: 1.2rem;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
     text-align: center;
 }
 
@@ -172,17 +174,15 @@ tr:nth-child(even) {
 
 /* --- SPONSOR CAROUSEL --- */
 .sponsors-section {
-    padding: 80px 0;
+    padding: 60px 0;
     background: var(--white);
     text-align: center;
-    border-top: 1px solid #eee;
 }
 
 .sponsors-section h2 {
     font-family: 'Orbitron', sans-serif;
-    margin-bottom: 40px;
-    font-size: 1.8rem;
-    color: var(--black);
+    margin-bottom: 30px;
+    font-size: 1.6rem;
 }
 
 .slider {
@@ -190,7 +190,6 @@ tr:nth-child(even) {
     margin: auto;
     overflow: hidden;
     position: relative;
-    width: 100%;
 }
 
 .slide-track {
@@ -200,17 +199,12 @@ tr:nth-child(even) {
 }
 
 .slide {
-    height: 100px;
     width: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 0 40px;
 }
 
 .slide img {
     max-width: 100%;
-    max-height: 80px;
     filter: grayscale(100%);
     opacity: 0.5;
     transition: 0.4s;
@@ -230,26 +224,19 @@ tr:nth-child(even) {
 footer {
     background: var(--black);
     color: var(--white);
-    padding: 50px 0;
+    padding: 40px 0;
     text-align: center;
     border-top: 5px solid var(--primary-red);
 }
 
 .footer-logo {
-    height: 90px;
-    margin-bottom: 20px;
+    height: 70px;
+    margin-bottom: 15px;
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
+/* --- MOBILE --- */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Consider adding a mobile menu icon later */
-    }
-    .main-title {
-        font-size: 3.5rem;
-    }
-    .sub-title {
-        font-size: 1.2rem;
-        letter-spacing: 4px;
-    }
+    .nav-links { display: none; }
+    .main-title { font-size: 3rem; }
+    .section-header { font-size: 1.8rem; }
 }
