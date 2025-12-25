@@ -190,8 +190,9 @@ tr:nth-child(even) {
     font-size: 1.6rem;
 }
 
+/* --- UPDATED SPONSOR CAROUSEL (LARGER LOGOS) --- */
 .slider {
-    height: 100px;
+    height: 150px; /* Increased from 100px */
     margin: auto;
     overflow: hidden;
     position: relative;
@@ -200,24 +201,27 @@ tr:nth-child(even) {
 
 .slide-track {
     display: flex;
-    width: calc(250px * 12);
+    /* Formula: Slide width (300px) * Total number of slides (12) */
+    width: calc(300px * 12); 
     animation: scroll 35s linear infinite;
 }
 
 .slide {
-    width: 250px;
-    padding: 0 40px;
+    height: 150px; /* Match slider height */
+    width: 300px;  /* Increased from 250px to give logos more room */
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 30px;
 }
 
 .slide img {
     max-width: 100%;
-    max-height: 80px;
+    max-height: 120px; /* Increased from 80px to make them physically larger */
     filter: grayscale(100%);
     opacity: 0.5;
     transition: 0.4s;
+    object-fit: contain; /* Ensures logos don't stretch */
 }
 
 .slide img:hover {
@@ -225,9 +229,10 @@ tr:nth-child(even) {
     opacity: 1;
 }
 
+/* Update the animation to match the new slide width */
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-250px * 6)); }
+    100% { transform: translateX(calc(-300px * 6)); } /* Must be half the total track width */
 }
 
 /* --- FOOTER --- */
