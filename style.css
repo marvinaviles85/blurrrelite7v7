@@ -74,26 +74,31 @@ nav {
     font-size: 1.2rem;
     text-transform: uppercase;
     transition: 0.3s;
+    padding: 5px 2px;
+    border-bottom: 2px solid transparent; /* Reserve space for active underline */
+}
+
+/* ACTIVE PAGE HIGHLIGHT */
+.nav-links a.active {
+    color: var(--primary-red);
+    border-bottom: 2px solid var(--primary-red);
 }
 
 .nav-links a:hover {
     color: var(--primary-red);
 }
 
-/* Specific Contact Us Button in Nav */
+/* CONTACT US BUTTON STYLE */
 .nav-contact-btn {
-    background-color: var(--primary-red);
-    color: white !important;
-    padding: 6px 15px;
+    border: 1px solid var(--primary-red);
+    padding: 6px 15px !important; /* Overriding standard nav padding */
     border-radius: 4px;
-    font-weight: bold;
-    border: 1px solid transparent;
 }
 
-.nav-contact-btn:hover {
-    background-color: transparent;
-    border: 1px solid var(--primary-red);
-    color: var(--primary-red) !important;
+.nav-contact-btn:hover, 
+.nav-contact-btn.active {
+    background-color: var(--primary-red);
+    color: white !important;
 }
 
 /* --- HERO SECTION --- */
@@ -122,10 +127,10 @@ nav {
     margin-top: -10px;
 }
 
-/* --- SCHEDULE PAGE ADJUSTMENTS --- */
+/* --- SCHEDULE PAGE TABLE --- */
 .section-container {
-    padding: 40px 5%; /* Reduced top padding to fix large gap */
-    min-height: 60vh; /* Keeps footer pushed down without massive empty space */
+    padding: 40px 5%;
+    min-height: 60vh;
     text-align: center;
 }
 
@@ -133,7 +138,7 @@ nav {
     font-family: 'Orbitron', sans-serif;
     font-size: 2.5rem;
     margin-top: 10px;
-    margin-bottom: 30px; /* Space between title and table */
+    margin-bottom: 30px;
     border-bottom: 4px solid var(--primary-red);
     display: inline-block;
     padding-bottom: 5px;
@@ -144,7 +149,7 @@ nav {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     border-radius: 8px;
     max-width: 1200px;
-    margin: 0 auto; /* Centers the table container */
+    margin: 0 auto;
 }
 
 table {
@@ -190,6 +195,7 @@ tr:nth-child(even) {
     margin: auto;
     overflow: hidden;
     position: relative;
+    width: 100%;
 }
 
 .slide-track {
@@ -201,10 +207,14 @@ tr:nth-child(even) {
 .slide {
     width: 250px;
     padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .slide img {
     max-width: 100%;
+    max-height: 80px;
     filter: grayscale(100%);
     opacity: 0.5;
     transition: 0.4s;
@@ -234,9 +244,9 @@ footer {
     margin-bottom: 15px;
 }
 
-/* --- MOBILE --- */
+/* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-    .nav-links { display: none; }
+    .nav-links { display: none; } /* Consider a mobile burger menu later */
     .main-title { font-size: 3rem; }
     .section-header { font-size: 1.8rem; }
 }
