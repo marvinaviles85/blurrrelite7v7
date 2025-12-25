@@ -1,45 +1,80 @@
 /**
  * BLURRR PREDATORS - SITE LOGIC
+ * Manages the Tournament Schedule and Page Initialization
  */
 
-// 1. Centralized Schedule Data
-// Update this array to change games across the site
-const gameData = [
-    { date: "MAR 12, 2024", opponent: "Storm Elite", time: "10:00 AM", result: "W 24-12" },
-    { date: "MAR 19, 2024", opponent: "Red Zone Flyers", time: "1:30 PM", result: "TBD" },
-    { date: "MAR 26, 2024", opponent: "Carolina Speed", time: "11:00 AM", result: "TBD" },
-    { date: "APR 02, 2024", opponent: "Georgia Heat", time: "9:00 AM", result: "TBD" },
-    { date: "APR 09, 2024", opponent: "Palmetto Punishers", time: "12:00 PM", result: "TBD" }
+// 1. Tournament Data Array
+// Format: Date, Tournament Name, Location (City, ST), and Result
+const tournamentData = [
+    { 
+        date: "MAR 12, 2024", 
+        name: "Battle at the Border", 
+        location: "NORTH AUGUSTA, SC", 
+        result: "W 24-12" 
+    },
+    { 
+        date: "MAR 19, 2024", 
+        name: "Queen City Showdown", 
+        location: "CHARLOTTE, NC", 
+        result: "TBD" 
+    },
+    { 
+        date: "MAR 26, 2024", 
+        name: "Palmetto State 7v7", 
+        location: "COLUMBIA, SC", 
+        result: "TBD" 
+    },
+    { 
+        date: "APR 02, 2024", 
+        name: "Peach State Invitational", 
+        location: "ATLANTA, GA", 
+        result: "TBD" 
+    },
+    { 
+        date: "APR 09, 2024", 
+        name: "Elite Beast Mode 7v7", 
+        location: "AUGUSTA, GA", 
+        result: "TBD" 
+    }
 ];
 
-// 2. Function to load schedule table
+// 2. Function to Load and Inject the Schedule Table
 function initSchedule() {
+    // Look for the table body element on the current page
     const tableBody = document.getElementById('schedule-body');
 
-    // Only proceed if the element exists (prevents errors on index.html)
-    if (tableBody) {
-        console.log("Schedule detected: Generating game rows...");
-        
-        let tableHTML = "";
-
-        gameData.forEach(game => {
-            tableHTML += `
-                <tr>
-                    <td>${game.date}</td>
-                    <td style="font-weight: bold; color: #D32F2F;">${game.opponent.toUpperCase()}</td>
-                    <td>${game.time}</td>
-                    <td class="result-cell">${game.result}</td>
-                </tr>
-            `;
-        });
-
-        tableBody.innerHTML = tableHTML;
+    // If we are NOT on the schedule page, this element won't exist
+    if (!tableBody) {
+        console.log("Home page detected: Skipping schedule initialization.");
+        return;
     }
+
+    console.log("Schedule page detected: Generating tournament rows...");
+
+    // Generate HTML for each row
+    let tableHTML = "";
+
+    tournamentData.forEach(item => {
+        tableHTML += `
+            <tr>
+                <td>${item.date}</td>
+                <td style="font-weight: bold; color: #D32F2F; letter-spacing: 1px;">
+                    ${item.name.toUpperCase()}
+                </td>
+                <td>${item.location.toUpperCase()}</td>
+                <td style="font-weight: bold;">${item.result}</td>
+            </tr>
+        `;
+    });
+
+    // Inject the rows into the table
+    tableBody.innerHTML = tableHTML;
 }
 
-// 3. Initialize when the DOM is ready
+// 3. Page Initialization Logic
 document.addEventListener('DOMContentLoaded', () => {
     initSchedule();
     
-    // You can add more initializers here (like Roster logic) in the future
+    // Future features like a roster or gallery can be initialized here
+    console.log("Blurrr Predators site fully loaded.");
 });
