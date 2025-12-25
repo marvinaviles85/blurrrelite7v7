@@ -7,34 +7,34 @@
 // This is the only place you need to update when new tournaments are added.
 const tournamentData = [
     { 
-        date: "MAR 12, 2024", 
-        name: "Battle at the Border", 
-        location: "North Augusta, SC", 
-        result: "W 24-12" 
+        date: "FEB 14 - 15, 2026", 
+        name: "BEA 7v7", 
+        location: "ATLANTA, GA",  
     },
     { 
-        date: "MAR 19, 2024", 
-        name: "Queen City Showdown", 
-        location: "Charlotte, NC", 
-        result: "TBD" 
+        date: "FEB 21, 2026", 
+        name: "FSG NATIONAL SERIES", 
+        location: "KNOXVILLE, TN", 
     },
     { 
-        date: "MAR 26, 2024", 
-        name: "Palmetto State 7v7", 
-        location: "Columbia, SC", 
-        result: "TBD" 
+        date: "MAR 21 - 22, 2026", 
+        name: "PREP REDZONE RTE 66 CLASSIC", 
+        location: "ROCK HILL, SC", 
     },
     { 
-        date: "APR 02, 2024", 
-        name: "Peach State Invitational", 
-        location: "Atlanta, GA", 
-        result: "TBD" 
+        date: "MAR 28 - 29, 2026", 
+        name: "BEA NATIONAL CHAMPIONSHIP", 
+        location: "ATLANTA, GA", 
     },
     { 
-        date: "APR 09, 2024", 
-        name: "Elite Beast Mode 7v7", 
-        location: "Augusta, GA", 
-        result: "TBD" 
+        date: "APR 10 - 11, 2026", 
+        name: "FSG NATIONAL CHAMPIONSHIP", 
+        location: "ATLANTA, GA",  
+    },
+    {
+        date: "APR 25 - 26, 2026",
+        name: "PREP REDZONE",
+        location: "EMERSON, GA",
     }
 ];
 
